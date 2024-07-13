@@ -11,8 +11,12 @@
     <style>
         #btnBox {
             text-align: center;
-            padding-top: 50px;
+            padding-top: 150px;
             transition: 500ms;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         button {
@@ -31,32 +35,41 @@
             color: white;
         }
 
-        .paddingTop350{
-            padding-top: 350px !important;
+        input {
+            width: 250px;
+            height: 30px;
+            border-radius: 5px;
+
+        }
+
+        .paddingTop350 {
+            padding-top: 250px !important;
+        }
+
+        .marginTop20px {
+            margin-top: 20px;
         }
     </style>
 
     <div id="btnBox">
-        <button onclick="message()">click me...</button>
+        <button onclick="sum()">جمع</button> <!----  عملگر جمع -> +  ----->
+        <button onclick="minus()">تفریق</button> <!----  عملگر تفریق -> -  ----->
+        <button onclick="multplicatiobn()">ضرب</button> <!----  عملگر ضرب -> *  ----->
+        <button onclick="division()">تقسیم</button> <!----  عملگر تقسیم -> /  ----->
+        <input placeholder="inter number1" class="num1 marginTop20px" type="number">
+        <input placeholder="inter number2" class="num2 marginTop20px" type="number">
     </div>
 
-
     <script>
-        const btnText = document.querySelector('button');
-        function message() {
-            if (btnText.innerText === "click me...") {
-                document.getElementById("btnBox").classList.add("paddingTop350")
-                btnText.innerText = "You clicked me!"
-                setTimeout(() => {
-                    alert(btnText.innerHTML)
-                }, 500);
-            } else {
-                btnText.innerText = "click me...";
-                document.getElementById("btnBox").classList.remove("paddingTop350")
-            }
+         let num1 = "";
+         let num2 = "";
+        function sum() {
+             num1 = parseInt(document.querySelector('.num1').value);
+             num2 = parseInt(document.querySelector('.num2').value);
+            let sum = num1 + num2;
+            alert("sum of number1 and number2 is : " + sum);
         }
     </script>
-
 </body>
 
 </html>

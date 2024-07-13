@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #btnBox {
+            text-align: center;
+            padding-top: 50px;
+            transition: 500ms;
+        }
+
+        button {
+            width: 250px;
+            height: 50px;
+            background: rgb(166, 255, 0);
+            transition: 500ms;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: x-large;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: rgb(119, 118, 118);
+            box-shadow: 0 0 20px black;
+            color: white;
+        }
+
+        .paddingTop350{
+            padding-top: 350px !important;
+        }
+    </style>
+
+    <div id="btnBox">
+        <button onclick="message()">click me...</button>
+    </div>
+
+
+    <script>
+        const btnText = document.querySelector('button');
+        function message() {
+            if (btnText.innerText === "click me...") {
+                document.getElementById("btnBox").classList.add("paddingTop350")
+                btnText.innerText = "You clicked me!"
+                setTimeout(() => {
+                    alert(btnText.innerHTML)
+                }, 500);
+            } else {
+                btnText.innerText = "click me...";
+                document.getElementById("btnBox").classList.remove("paddingTop350")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
